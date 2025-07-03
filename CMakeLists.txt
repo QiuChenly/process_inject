@@ -3,11 +3,13 @@ project(process_inject)
 
 set(CMAKE_CXX_STANDARD 17)
 
+enable_language(OBJCXX)
+
+set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64")
+
 add_executable(${PROJECT_NAME} main.mm)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE "-framework Foundation")
-
-set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64")
 
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/build)
 
